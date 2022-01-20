@@ -1,0 +1,2 @@
+[alink]
+(something.com)
