@@ -20,9 +20,9 @@ public class MarkdownParse {
             int openParen = markdown.indexOf("(", nextCloseBracket);
             System.out.printf("openParen %d\n", openParen);
             int closeParen = markdown.indexOf(")", openParen);
-           // nextOpenBracket - markdown.indexOf("!") != 1
             System.out.printf("closeParen %d\n", closeParen);
-            if( openParen -  nextCloseBracket == 1
+            if( nextOpenBracket - markdown.indexOf("!") != 1 &&
+            openParen -  nextCloseBracket == 1
             && nextOpenBracket != -1 && nextCloseBracket != -1 && openParen != -1
             && closeParen != -1){
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
