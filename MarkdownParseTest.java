@@ -10,7 +10,13 @@ public class MarkdownParseTest {
     public void addition() {
         assertEquals(2, 1 + 1);
     }
-
+    @Test
+    public void testFile1() throws IOException {
+        String contents= Files.readString(Path.of("./test-file.md"));
+        List<String> expect = List.of("https://something.com", "some-page.html");
+        assertEquals(MarkdownParse.getLinks(contents), expect);
+    }
+	/*
     @Test 
     public void parseTest() throws IOException{
 		Path fileName = Path.of("test-file.md");
@@ -94,7 +100,7 @@ public class MarkdownParseTest {
     }
 
 
-
+*/
 
 
 }
